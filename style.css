@@ -1,0 +1,39 @@
+.termin {
+    font-size: 20px;
+    color: blue;
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    /*font-family: 'Comic Neue', cursive;*/
+}
+.termin_desc {
+    font-size: 16px;
+    text-align: justify;
+    color: green;
+}
+.orange {
+    color: orange;
+}
+.termin_alt {
+    color: red;
+}
+.purple {
+    color: purple;
+}
+main ol {
+    color:rgb(44, 106, 106);
+}
+blockquote, cite {
+    color:rgb(120, 23, 4);
+}
+
+nav a:hover{
+    color: gold;
+}
+nav a:active {
+    color: green;
+}
+nav a:visited {
+    color: #ff0000;
+}
+h1, h2, h3 {
+    font-family: 'Comic Neue', cursive;
+}

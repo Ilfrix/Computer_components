@@ -5,18 +5,33 @@
         <meta name="viewplot" content="width=device=width, initial-scale=1.0">
         <title>Компьютерные комплектующие</title>
         <link rel="icon" type="image/png" href="/favicon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="style.css">
     </head>
     
-    <pre><blockquote>
+
+    <body>
+        <h1><em>Мир компьютеров</em></body></h1>
+        <header>
+            <img src="icon.png" width="200" height="200">
+            <nav>
+                <ul>
+                    <li> <a href="/cpu.html">Процессор</a>
+                    <li> <a href="/memory.html">Память</a>
+                    <li> <a href="/card.html">Видеокарта</a>
+                </ul>
+            </nav>
+        </header>
+<pre><blockquote>
 <cite>Согласись, что это круто</cite>
 Согласись, что это круто:
 Дарим мы тебе компьютер!
 Подключайся к Интернету
 И общайся со всем светом!<blockquote><sub>Автор неизвестен</sub>
-    </pre>
-    <body>
+</pre>
         <h1 id="top">Основные составляющие </h1>
-        <ol type="A">
+        <main>
+        <ol type="A" class="info">
             <li value=1>Процессор</li>
             <ul type="disc">
                 <li>Буферный</li>
@@ -30,26 +45,40 @@
             <li>Монитор</li>
         </ol>
         <a href="#down">В конец страницы</a>
-        <h1 id="Main topic">Хит продаж</h1>
-        <p>Процессор <i>Intel Core i7-13700K</i> с частотой до 5.8*10<sup>9</sup> Гц <u><em>самый </em> популярный</u> на сегодняшний <a href="https://www.howtablet.ru/luchshie-processory-goda/">день</a>. </p>
+        <h1 id="main_topic">Хит продаж</h1>
+        <p class="orange">Процессор <i>Intel Core i7-13700K</i> с частотой до 5.8*10<sup>9</sup> Гц <u><em>самый </em> популярный</u> на сегодняшний <a href="https://www.howtablet.ru/luchshie-processory-goda/">день</a>. </p>
         <h2 id="description">Описание</h2>
-        <dl>
-            <dt>Процессор</dt>
-            <dd><strong>Центральное</strong> обрабатывающее устройство, исполняющее машинные инструкции.</dd>
-            <dd>"Мозг" компьютера.</dd>
-            <dt>Память</dt>
-            <dd>Устройство, используемое в вычислениях систем в течение определённого времени.</dd>
-            <dt>Материнская плата</dt>
-            <dd>Это плата, которая является <b>связующим звеном</b> между всеми элементами компьютера, именно к ней подключаются все остальные комплектующие.</dd>
-            <dd>Запоминающее устройство.</dd>
-            <dt>Видеокарта</dt>
-            <dd>Устройство, преобразующее <b>графический образ</b>, хранящийся как содержимое памяти компьютера (или самого адаптера), в форму, пригодную для дальнейшего <b>вывода</b> на экран монитора.</dd>
-            <dt>Монитор<dt>
-            <dd>Устройство оперативной <b>визуальной связи</b> пользователя с управляющим устройством и отображением данных, передаваемых с клавиатуры, мыши или центрального процессора.</dd>
-            <dd>Устройство для отображения результатов работы компьютера для человека.</dd>
+        <article>
+            <dl>
+                <section>
+                    <dt class="termin">Процессор</dt>
+                    <dd class="termin_desc"><strong>Центральное</strong> обрабатывающее устройство, исполняющее машинные инструкции.</dd>
+                    <dd class="termin_alt">"Мозг" компьютера.</dd>
+                </section>
+                <section>
+                    <dt class="termin">Память</dt>
+                    <dd class="termin_desc">Устройство, используемое в вычислениях систем в течение определённого времени.</dd>
+                </section>
+                
+                <section>
+                    <dt class="termin">Материнская плата</dt>
+                    <dd class="termin_desc">Это плата, которая является <b>связующим звеном</b> между всеми элементами компьютера, именно к ней подключаются все остальные комплектующие.</dd>
+                    <dd class="termin_alt">Запоминающее устройство.</dd>
+                </section>
+                <section>
+                    <dt class="termin">Видеокарта</dt>
+                    <dd class="termin_desc">Устройство, преобразующее <b>графический образ</b>, хранящийся как содержимое памяти компьютера (или самого адаптера), в форму, пригодную для дальнейшего <b>вывода</b> на экран монитора.</dd>
+                </section>
+                <section>
+                    <dt class="termin">Монитор<dt>
+                    <dd class="termin_desc">Устройство оперативной <b>визуальной связи</b> пользователя с управляющим устройством и отображением данных, передаваемых с клавиатуры, мыши или центрального процессора.</dd>
+                    <dd class="termin_alt">Устройство для отображения результатов работы компьютера для человека.</dd>
+                </section>
 
-        </dl>
-        
+            </dl>
+        </article>
+
+    </main>
         <h3 id="addition">Дополнительно</h3>
         <a href="#top">Наверх<br></a>
         <p>Больше про компьютер вы можете узнать здесь:<br>
@@ -59,24 +88,30 @@
         </map>
         <br>
         </p>
+        <aside>
+            <h3>Навигация:<br></hr>
+                <img src="figures.png" alt="Navigation" usemap="#Navigation" width="300" height="100">
+                <map name="Navigation">
+                    <area shape="polygon" coords="50, 0, 100, 50, 75, 100, 25, 100, 0, 50" href="#top">
+                    <area shape="rectangle" coords="100, 0, 200, 100" href="#description">
+                    <area shape="circle" coords="250, 50, 50" href="#addition">
+                </map>
+        </aside>
+
         
-        <h3>Навигация:<br></hr>
-        <img src="figures.png" alt="Navigation" usemap="#Navigation" width="300" height="100">
-        <map name="Navigation">
-            <area shape="polygon" coords="50, 0, 100, 50, 75, 100, 25, 100, 0, 50" href="#top">
-            <area shape="rectangle" coords="100, 0, 200, 100" href="#description">
-            <area shape="circle" coords="250, 50, 50" href="#addition">
-        </map>
-        
-        <div>
+        <footer>
+            <div>
             <p>
                 <a name="down"></a>
                 <strong>Связаться с нами:</strong> <br>
-                <a href="tel:0123456789">Номер телефона<br></a>
-                <a href="mailto:examlpe@mail.ru">Электронная почта</a>
+                <adress>
+                    <a href="tel:0123456789">Номер телефона<br></a>
+                    <a href="mailto:examlpe@mail.ru">Электронная почта</a>     
+                </adress>
     
             </p>
-        </div>
+            </div>
+        </footer>
 
     </body>
 </html>
