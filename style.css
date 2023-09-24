@@ -37,3 +37,14 @@ nav a:visited {
 h1, h2, h3 {
     font-family: 'Comic Neue', cursive;
 }
+.head{
+    min-height: 10px;
+    text-align: center;
+    font-size: 37px;
+    font-style: italic;
+    font-weight: bold;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: blue;
+}
