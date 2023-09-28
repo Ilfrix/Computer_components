@@ -37,14 +37,50 @@ nav a:visited {
 h1, h2, h3 {
     font-family: 'Comic Neue', cursive;
 }
-.head{
-    min-height: 10px;
+#proc_picture{
+    float: left;
+    margin-right: 1rem;
+}
+#memory_pic{
+    float: right;
+    margin-right: 1rem;
+}
+#sec_1{
+    display: block;
+    height: 123px;
+}
+#sec_2{
+    display: block;
+    height: 123px;
+}
+.head{ 
     text-align: center;
     font-size: 37px;
     font-style: italic;
     font-weight: bold;
     top: 0;
+    padding: 1;
+    margin: 1;
     left: 0;
     position: fixed;
-    background-color: blue;
+    background-color: white;
+    text-decoration: none;
+}
+.stick{
+    position: sticky;
+    top: 250px;
+    left: 550px;
+}
+.front{
+    z-index: -2;
+}
+.network{
+    position: absolute;
+}
+.head li{
+    text-align: left;
+    list-style: none;
+}
+.pr_class{
+    position: relative;
 }
