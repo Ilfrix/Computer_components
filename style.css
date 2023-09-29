@@ -68,8 +68,8 @@ h1, h2, h3 {
 }
 .stick{
     position: sticky;
-    top: 250px;
-    left: 550px;
+    top: 70px;
+    left: 1550px;
 }
 .front{
     z-index: -2;
