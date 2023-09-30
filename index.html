@@ -14,7 +14,7 @@
         <header>
             <div>
                 <table class="head" cellpading="0" width="1520px" ><tr><td>
-                    <img src="logo.png" height="200" width="200"></td>
+                    <img src="Logo.png" height="200" width="200"></td>
                     <td>Мир <br>компьютеров</td><td>
                     <img src="Logo_2.png" height="200"></td>
                     <td>
@@ -111,41 +111,51 @@
         <form action="" method="get">
             <p>
                 <label for="name">Введите имя</label>
-                <input type="text" name="name" required>
+                <input type="text" name="name" id="name" checked required>
             </p>
             <p>
                 <label for="email">Введите почту</label>
-                <input type="email" name="email" required>
+                <input type="email" name="email" id="email" checked required>
         
             </p>
             <p>
                 <label for="mobile">Введите телефон</label>
-                <input type="tel" name="tel" required>
+                <input type="tel" name="tel" id="mobile" checked required>
         
             </p>
             <p>
                 <label for="sex">Укажите пол
-                <input type="radio" name="sex" value="male">
+                <input type="radio" name="sex" value="male" checked required>
                 Мужчина
             </label>
             <label for="sex">
-                <input type="radio" name="sex" value="female">
+                <input type="radio" name="sex" value="female" checked required>
                 Женщина
             </label>
              </p>
             <p>
                 <label for="born-date">Введите дату рождения</label>
-                <input type="datetime-local" name="born-date">
+                <input type="datetime-local" name="born-date" id="born-date" checked required>
+        
+            </p>
+            <p> 
+                <label for="photo">Прикрепите фото</label>
+                <input type="file" name="photo" id="photo" checked required>
         
             </p>
             <p>
-                <label for="CV">Прикрепите резюме</label>
-                <input type="file" name="CV" required>
+                <label for="about">Расскажите о себе</label>
+                <textarea id="about"n ame="about" rows="7" cols="35" minlength="10" maxlength="210" placeholder="Достижения в непрофильной сфере, увлечения" required></textarea>
+        
+            </p>
+            <p>
+                <label for="password">Придумайте пароль</label>
+                <input type="password" name="password" id="password" checked required>
         
             </p>
             <p>
                 <label for="agrees">Согласие на обработку данных</label>
-                <input type="checkbox" name="agrees" required>
+                <input type="checkbox" name="agrees" id="agrees" required>
         
             </p>
             <input type="submit" value="Отправить">
