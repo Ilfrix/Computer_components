@@ -101,26 +101,29 @@
     </main>
         <h3 id="addition">Дополнительно</h3>
         <a href="#top">Наверх<br></a>
-        <p>Больше про компьютер вы можете узнать здесь:<br>
+        <p>Больше про компьютер вы можете узнать здесь:<br></p>
         <img src="Wikipedia.png" alt="Source more" usemap="#source" width="100" height="100">
         <map name="source">
             <area shape="rectangle" coords="0, 0, 100, 100" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80">
         </map>
         <br>
         <a><b>Хотите работать у нас?</b></a>
+        <div style="width: 250px; height:700px;">
         <form action="" method="get">
+            <fieldset >
+                <legend>Регистрация</legend>
             <p>
-                <label for="name">Введите имя</label>
-                <input type="text" name="name" id="name" checked required>
+                <!-- <label for="name">Введите имя</label> -->
+                <input type="text" name="name" id="name" min="3" max="20" pattern="[а-яА-Я]*" placeholder="Имя" checked required>
             </p>
             <p>
-                <label for="email">Введите почту</label>
-                <input type="email" name="email" id="email" checked required>
+                <!-- <label for="email">Введите почту</label> -->
+                <input type="email" name="email" id="email" placeholder="example@mail.ru" checked required>
         
             </p>
             <p>
-                <label for="mobile">Введите телефон</label>
-                <input type="tel" name="tel" id="mobile" checked required>
+                <!-- <label for="mobile">Введите телефон</label> -->
+                <input type="tel" name="tel" id="mobile" placeholder="Телефон" checked required>
         
             </p>
             <p>
@@ -134,7 +137,7 @@
             </label>
              </p>
             <p>
-                <label for="born-date">Введите дату рождения</label>
+                <!-- <label for="born-date">Введите дату рождения</label> -->
                 <input type="datetime-local" name="born-date" id="born-date" checked required>
         
             </p>
@@ -142,15 +145,27 @@
                 <label for="photo">Прикрепите фото</label>
                 <input type="file" name="photo" id="photo" checked required>
         
-            </p>
+            </p> 
+
+            <label for="education">Образование</label>
+            <select name="education" id="education" multiple size="4" required>
+                <option value="">Выберите уровень образования</option>
+                <option value="school(9)">Школа 9 классов</option>
+                <option value="school(11)">Школа 11 классов</option>
+                <option value="higher(1)">Бакалавриат</option>
+                <option value="higher(2)">Магистратура</option>
+                <option value="higher(3)">Аспирантура</option>
+            </select>
+        
+            
             <p>
                 <label for="about">Расскажите о себе</label>
                 <textarea id="about"n ame="about" rows="7" cols="35" minlength="10" maxlength="210" placeholder="Достижения в непрофильной сфере, увлечения" required></textarea>
         
             </p>
             <p>
-                <label for="password">Придумайте пароль</label>
-                <input type="password" name="password" id="password" checked required>
+                <!-- <label for="password">Придумайте пароль</label> -->
+                <input type="password" name="password" id="password" min="8" max="20" placeholder="Пароль" checked required>
         
             </p>
             <p>
@@ -158,10 +173,12 @@
                 <input type="checkbox" name="agrees" id="agrees" required>
         
             </p>
+            <button name="reset" type="reset">Сброс</button>
             <input type="submit" value="Отправить">
-
+            </fieldset>
         </form>
-        </p>
+        </div>
+        <!-- </p> -->
         <aside>
             <h3>Навигация:<br></hr>
                 <img src="figures.png" alt="Navigation" usemap="#Navigation" width="300" height="100">
