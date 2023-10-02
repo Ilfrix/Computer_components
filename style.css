@@ -84,3 +84,17 @@ h1, h2, h3 {
 .pr_class{
     position: relative;
 }
+
+::placeholder {
+    background-color: #ff0000;
+    color: aliceblue;
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+input:focus{
+    color: green;
+    background-color: bisque;
+    border: 0.5em solid #29B0D9;
+    font-style: italic;
+}

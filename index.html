@@ -107,37 +107,36 @@
             <area shape="rectangle" coords="0, 0, 100, 100" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80">
         </map>
         <br>
-        <a><b>Хотите работать у нас?</b></a>
+        
+        <iframe src="https://youtu.be/z2rAoz2cZ4A?si=Q9iSGWTZKwXLkwYK" title="video" width="400" height="400"></iframe>
+        <br>
         <div style="width: 250px; height:700px;">
-        <form action="" method="get">
+            <a><b>Хотите работать у нас?</b></a>
+        <form action="" enctype="text/plain" method="get">
             <fieldset >
                 <legend>Регистрация</legend>
             <p>
-                <!-- <label for="name">Введите имя</label> -->
                 <input type="text" name="name" id="name" min="3" max="20" pattern="[а-яА-Я]*" placeholder="Имя" checked required>
             </p>
             <p>
-                <!-- <label for="email">Введите почту</label> -->
                 <input type="email" name="email" id="email" placeholder="example@mail.ru" checked required>
         
             </p>
             <p>
-                <!-- <label for="mobile">Введите телефон</label> -->
                 <input type="tel" name="tel" id="mobile" placeholder="Телефон" checked required>
         
             </p>
             <p>
                 <label for="sex">Укажите пол
-                <input type="radio" name="sex" value="male" checked required>
+                <input type="radio" name="sex" id="sex" value="male" checked required>
                 Мужчина
             </label>
             <label for="sex">
-                <input type="radio" name="sex" value="female" checked required>
+                <input type="radio" name="sex" id="sex" value="female" checked required>
                 Женщина
             </label>
              </p>
             <p>
-                <!-- <label for="born-date">Введите дату рождения</label> -->
                 <input type="datetime-local" name="born-date" id="born-date" checked required>
         
             </p>
@@ -164,7 +163,6 @@
         
             </p>
             <p>
-                <!-- <label for="password">Придумайте пароль</label> -->
                 <input type="password" name="password" id="password" min="8" max="20" placeholder="Пароль" checked required>
         
             </p>
@@ -178,7 +176,9 @@
             </fieldset>
         </form>
         </div>
-        <!-- </p> -->
+        
+        <h3>Мы находимся здесь</h3>
+        <iframe src="https://maps.app.goo.gl/R3DUVvhKzA8roHtYA" title="map" width="300" height="300"></iframe>
         <aside>
             <h3>Навигация:<br></hr>
                 <img src="figures.png" alt="Navigation" usemap="#Navigation" width="300" height="100">
