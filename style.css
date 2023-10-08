@@ -104,16 +104,6 @@ blockquote, cite {
     color:rgb(120, 23, 4);
 }
 
-
-/* nav a:hover{
-    color: gold;
-}
-nav a:active {
-    color: green;
-}
-nav a:visited {
-    color: #ff0000;
-} */
 h1, h2, h3 {
     font-family: 'Comic Neue', cursive;
 }
@@ -130,22 +120,6 @@ h1, h2, h3 {
 }
 #sec_2{
     display: block;
-}
-.head{ 
-    text-align: center;
-    font-size: 30px;
-    min-width: 100%;
-    font-style: italic;
-    font-weight: bold;
-    top: 0;
-    align-items: center;
-    justify-content: space-between; 
-    display: flex;
-    flex-wrap: wrap;
-    left: 0;
-    position: fixed;
-    background-color: white;
-    z-index: 10;
 }
 
 .info_more{
@@ -185,12 +159,6 @@ video{
     display: flex;
     flex-wrap: wrap;
 }
-/* input:focus{
-    color: green;
-    background-color: bisque;
-    border: 0.5em solid #29B0D9;
-    font-style: italic;
-} */
 
 @media (max-width:767px) {
     .header__body {
@@ -276,56 +244,91 @@ input:checked ~ * .header__menu {
     text-align: center;
 }
 
-@media (max-width:767px) {
-    .content{
-        padding: 45px 0px 0px 0px;
-    }
-}
-
 .container__gallery {
-    max-width: 1140px;
+    max-width: 100%;
     padding: 0 16px;
     margin: 0 auto;
   }
-  .section {
+.section {
     padding: 64px 0;
-  }
-  .section__gallery {
+}
+.section__gallery {
     margin-bottom: 64px;
-  }
-  .section__gallery:last-child {
+}
+.section__gallery:last-child {
     margin-bottom: 0;
-  }
-  .gallery {
+}
+.gallery {
     position: relative;
-  }
-  .gallery__flex {
+}
+.gallery__flex {
     height: 600px;
     display: flex;
-  }
-  .gallery__item {
-    flex: 1; /* изначальное значени для все элементов */
-    transition: flex-grow 0.64s ease-in-out; /* для плавного изменения занимаемого пространства */
-  
-    /* если блоки изображений отображаются вертикально, им необходимо задать overflow: hidden; или min-height: 0; иначе блоки с изображениями не будут сжиматься и выйдут за границы блока галереи */
+}
+.gallery__item {
+    flex: 1;
+    transition: flex-grow 0.64s ease-in-out; 
     overflow: hidden;
     min-height: 0;
-  }
-  .gallery__item:hover {
-    flex: 16; /* при наведении меняем значение flex */
-  }
-  .gallery__item img {
-    /* пропорционально растягиваем изображение на весь блок <div class="gallery__item"></div> */
+}
+.gallery__item:hover {
+    flex: 16; 
+}
+.gallery__item img {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
     display: block;
-    /* для плавного перехода используем transition */
     transition: transform 1.6s ease-in-out;
-    /* изначально изображение немного увеличено */
     transform: scale(1.1);
-  }
-  .gallery__item:hover img {
-    transform: scale(1); /* при наведении убираем масштабирование изображения */
-  }
+}
+.gallery__item:hover img {
+    transform: scale(1);
+}
+
+@media (max-width:767px) {
+    .container__gallery {
+        max-width: 100%;
+        padding: 0 5%;
+        margin: 0 auto;
+    }
+    .section {
+        padding: 5% 0;
+    }
+    .section__gallery {
+        margin-bottom: 5%;
+    }
+    .section__gallery:last-child {
+        margin-bottom: 5%;
+    }
+    .gallery {
+        position: relative;
+    }
+      .gallery__flex {
+        height: 10%;
+        display: flex;
+    }
+    .gallery__item {
+        flex: 2;
+        transition: flex-grow 0.64s ease-in-out; 
+        overflow: hidden;
+        min-height: 0;
+    }
+    .gallery__item:hover {
+        flex: 16;
+    }
+    .gallery__item img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        display: block;
+        transition: transform 1.6s ease-in-out;
+        transform: scale(1.1);
+    }
+    .gallery__item:hover img {
+        transform: scale(1);
+    }
+}
+
