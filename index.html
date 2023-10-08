@@ -2,7 +2,7 @@
 <html lang="ru">
     <head>
         <meta charset="ru">
-        <meta name="viewplot" content="width=device=width, initial-scale=1.0">
+        <meta name="viewplot" content="width=device-width, initial-scale=1.0">
         <title>Компьютерные комплектующие</title>
         <link rel="icon" type="image/png" href="/favicon.png">
         <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,700&display=swap" rel="stylesheet"> 
@@ -11,29 +11,51 @@
     
 
     <body>
-        <header>
-            <div>
-                <table class="head" cellpading="0" width="1520px" ><tr><td>
-                    <img src="Logo.png" height="200" width="200"></td>
-                    <td>Мир <br>компьютеров</td><td>
-                    <img src="Logo_2.png" height="200"></td>
-                    <td>
-                
-                <nav>
-                    <ul>
-                        <li> <a href="/cpu.html">Процессор</a>
-                        <li> <a href="/memory.html">Память</a>
-                        <li> <a href="/card.html">Видеокарта</a>
-                    </ul>
-                </nav>
-            </td>
-        </tr>
-                </table>
-            </div>
+        <div class="wrapper">
+            <header class="header">
+                <div class="container">
+                    <input id="inp" type="checkbox" />
+                    <div class="header__body">
+                        <a href="#" class="header__logo">
+                            <img src="Logo.png" alt="">
+                        </a>
+                        
+                        <div class="header__burger">
+                            <label for="inp" id="cancel">——<label>
+                            
+                        </div>
+                        
+                        <nav class="header__menu">
+                            <ul class="header__list">
+                                <li>
+                                    <a href="" class="header__link">Процессор</a>
+                                </li>
+                                <li>
+                                    <a href="" class="header__link">Видеокарта</a>
+                                </li>
+                                <li>
+                                    <a href="" class="header__link">Карта памяти</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        
+        <!-- <div class="head">
+        <header class="head" width="100%">
+            <div class="head" width="100%"> 
+                <img src="Logo.png" height="15%" width="15%">
+                <a><br>Мир <br>компьютеров</a>
+                <img src="Logo_2.png" height="15%" width="15%">
+                <button onclick="window.location.href = './card.html';">Видеокарта</button> 
+                <button onclick="window.location.href = './cpu.html';">Процессор</button>
+                <button onclick="window.location.href = './memory.html';">Карта памяти</button>
+             </div> -->
             
-        </header>
-<div>
-<img src="white.jpg" height="200px" class="front">
+    </div>
+<div class="content">
+<!-- <img src="white.jpg" height="25%" width="25%" class="front"> -->
 <pre id="quote"><blockquote>
 <cite>Согласись, что это круто</cite>
 Согласись, что это круто:
@@ -41,7 +63,7 @@
 Подключайся к Интернету
 И общайся со всем светом!<blockquote><sub>Автор неизвестен</sub>
 </pre>
-</div>
+
         <h1 id="top">Основные составляющие </h1>
         <main>
         <ol type="A" class="info">
@@ -58,41 +80,53 @@
             <li>Монитор</li>
         </ol>
         <a href="#down">В конец страницы</a>
-        <h1 id="main_topic">Хит продаж</h1>
-        <p class="orange">Процессор <i>Intel Core i7-13700K</i> с частотой до 5.8*10<sup>9</sup> Гц <u><em>самый </em> популярный</u> на сегодняшний <a href="https://www.howtablet.ru/luchshie-processory-goda/">день</a>. </p>
-        <h2 id="description">Описание</h2>
-        <img src="proc.png" height="100px" width="100px" class="stick">
+        <img src="proc.png" height="50px" width="50px" class="stick">
         <article>
             
             <dl>
                 <section id="sec_1">
+                    <div>
                     <dt class="termin network">Процессор</dt>
                     <br><br>
                     <img src="./process.jpg" height="100px" width="100px" id="proc_picture" class="pr_class"/>
-                    <dd class="termin_desc"><strong>Центральное</strong> обрабатывающее устройство, исполняющее машинные инструкции.</dd>
-                    <dd class="termin_alt">"Мозг" компьютера.</dd>
+                    <dd class="termin_desc"><a><strong>Центральное</strong> обрабатывающее устройство, исполняющее машинные инструкции.</a></dd>
+                        <dd class="termin_alt">"Мозг" компьютера.</dd>
+                    </div>
+                    
                     
                 </section>
                 <section id="sec_2">
                     <br>
-                    <dt class="termin">Память</dt>
-                    <img src="memory_pic.jpg" height="100px" width="100px" id="memory_pic"/>
-                    <dd class="termin_desc">Устройство, используемое в вычислениях систем в течение определённого времени.</dd>
+                    <div>
+                        <dt class="termin">Память</dt>
+                        <img src="memory_pic.jpg" height="100px" width="100px" id="memory_pic"/>
+                        <dd class="termin_desc">Устройство, используемое в вычислениях систем в течение определённого времени.</dd>
+                    </div>
+
                 </section>
                 
                 <section>
-                    <dt class="termin">Материнская плата</dt>
-                    <dd class="termin_desc">Это плата, которая является <b>связующим звеном</b> между всеми элементами компьютера, именно к ней подключаются все остальные комплектующие.</dd>
-                    <dd class="termin_alt">Запоминающее устройство.</dd>
+                    
+                    <div>
+                        <dt class="termin">Материнская плата</dt>
+                        <dd class="termin_desc"><a>Это плата, которая является <b>связующим звеном</b> между всеми элементами компьютера, именно к ней подключаются все остальные комплектующие.</a></dd>
+                        <dd class="termin_alt">Запоминающее устройство.</dd>
+                    </div>
+                    
                 </section>
                 <section>
+                    <div>
                     <dt class="termin">Видеокарта</dt>
-                    <dd class="termin_desc">Устройство, преобразующее <b>графический образ</b>, хранящийся как содержимое памяти компьютера (или самого адаптера), в форму, пригодную для дальнейшего <b>вывода</b> на экран монитора.</dd>
+                    <dd class="termin_desc"><a>Устройство, преобразующее <b>графический образ</b>, хранящийся как содержимое памяти компьютера (или самого адаптера), в форму, пригодную для дальнейшего <b>вывода</b> на экран монитора.</a></dd>
+                    </div>
                 </section>
                 <section>
-                    <dt class="termin">Монитор<dt>
-                    <dd class="termin_desc">Устройство оперативной <b>визуальной связи</b> пользователя с управляющим устройством и отображением данных, передаваемых с клавиатуры, мыши или центрального процессора.</dd>
-                    <dd class="termin_alt">Устройство для отображения результатов работы компьютера для человека.</dd>
+                    <div>
+                        <dt class="termin">Монитор<dt>
+                            <dd class="termin_desc"><a>Устройство оперативной <b>визуальной связи</b> пользователя с управляющим устройством и отображением данных, передаваемых с клавиатуры, мыши или центрального процессора.</a></dd>
+                            <dd class="termin_alt">Устройство для отображения результатов работы компьютера для человека.</dd>
+                    </div>
+
                 </section>
 
             </dl>
@@ -102,13 +136,14 @@
         <h3 id="addition">Дополнительно</h3>
         <a href="#top">Наверх<br></a>
         <p>Больше про компьютер вы можете узнать здесь:<br></p>
-        <img src="Wikipedia.png" alt="Source more" usemap="#source" width="100" height="100">
+        <div class="info_more">
+        <img src="Wikipedia.png" alt="Source more" usemap="#source" width="200vw" height="200vh">
         <map name="source">
-            <area shape="rectangle" coords="0, 0, 100, 100" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80">
+            <area shape="rectangle" coords="100, 0, 100, 100" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80">
         </map>
         <br>
-        
-        <iframe src="https://youtu.be/z2rAoz2cZ4A?si=Q9iSGWTZKwXLkwYK" title="video" width="400" height="400"></iframe>
+        <iframe src="https://youtu.be/z2rAoz2cZ4A?si=Q9iSGWTZKwXLkwYK" class="video" title="video"></iframe>
+        </div>
         <br>
         <div style="width: 250px; height:700px;">
             <a><b>Хотите работать у нас?</b></a>
@@ -202,6 +237,7 @@
             </p>
             </div>
         </footer>
-
+    </div>
+</div>
     </body>
 </html>
