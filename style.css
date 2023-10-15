@@ -347,13 +347,6 @@ input:checked ~ * .header__menu {
         transform: scale(1);
     }
 }
-
-/* .main__menu {
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap:2px;
-} */
 .buttons{
     display: flex;
     flex-wrap: wrap;
@@ -517,25 +510,11 @@ input:checked ~ * .header__menu {
     color: #adadaf;
     letter-spacing: 1px;
     line-height: 40px;
-    
-    /* content: attr(data); */
 }
 
-/* .memory__menu::after,  */
 .memory__menu::before {
-  /* backface-visibility: hidden; */
-  /* border: 1px solid rgba(#fff, 0); */
-  /* bottom: 0px; */
   content: attr(data);
-  /* content: " "; */
-
   padding: 0 20px;
-  /* display: flex; */
-  /* margin: 0 auto; */
-  /* position: relative; */
-  /* transition: all 280ms ease-in-out; */
-  
-  /* width: 0; */
 }
 .memory__menu:active{
     letter-spacing: 5px;
@@ -655,6 +634,26 @@ input:checked ~ * .header__menu {
 
 }
 .card__monitor:hover::before{
+    transition: opacity 1s;
+    opacity: 1;
+}
+
+.video_text{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.add_video {
+    height: 300px;
+    width: 300px;
+}
+
+.add_video::before{
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+    opacity: 0;
+}
+
+.add_video:hover::before{
     transition: opacity 1s;
     opacity: 1;
 }
