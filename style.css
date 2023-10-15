@@ -552,7 +552,6 @@ input:checked ~ * .header__menu {
     width: 70%;
 }
 
-
 .dropdown {
     position: flex;
     display: inline-block;
@@ -598,17 +597,64 @@ input:checked ~ * .header__menu {
     }
 }
 
-/* .bell{
-    z-index: 2;
-    position: relative;
+.cards{
     display: flex;
-    right: 0;
-    border-radius: 50%;
-    top:0;
-    margin: 0;
-    padding: 0;
-} */
+    flex-wrap: wrap;
+    height: 100%;
+    flex-direction: row;
+}
 
-/* .bell:hover{
-    z-index: 0;
-} */
+.card__old_computer{
+    background-image: url('./first_computer.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 190px;
+}
+.card__old_computer::before{
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
+    color:#ff0000;
+    background: #ddd;
+    opacity: 0;
+}
+.card__old_computer:hover::before{
+    transition: opacity 1s;
+    opacity: 1;
+}
+.card__system_block{
+    background-image: url('system_block.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 180px;
+    height: 280px;
+}
+.card__system_block::before{
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
+    color:#ff0000;
+    background: #00000d;
+    opacity: 0;
+}
+.card__system_block:hover::before{
+    transition: opacity 1s;
+    opacity: 1;
+}
+
+.card__monitor{
+    background-image: url('monitor.jpeg');
+    background-size: cover;
+    background-position: center;
+    width: 430px;
+    height: 350px;
+    opacity: 1;
+}
+.card__monitor::before{
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+    color:#ff0000;
+    opacity: 0;
+    background: black;
+
+}
+.card__monitor:hover::before{
+    transition: opacity 1s;
+    opacity: 1;
+}
