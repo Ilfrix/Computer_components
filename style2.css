@@ -1,0 +1,203 @@
+body{
+    padding: 4.5rem;
+    margin: 0;
+    background: linear-gradient(90deg, #282828 10%, #3e3d3e 62%);
+    font-family: "Inter", sans-serif;
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    vertical-align: 10%;
+}
+
+.card_1, .card_2, .card_3{
+    width: 400px;
+    height: auto;
+    margin: 1%;
+    z-index: 0;
+    margin: 0 0 9em 2em;
+    position:static;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: white;
+    background: rgba(255, 255, 255, 0.556);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.card-title_1, .card-title_2, .card-title_3{
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
+}
+
+.card_1::before, .card_2::before, .card_3::before{
+    width: 30%;
+    z-index: -1;
+    position: absolute;
+    top: -30%;
+    left: 30%;
+    opacity: 1;
+    justify-content: center;
+    align-items: center;
+    content:'';
+    height: 120%;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: red;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(30px);
+    transform: skew(15deg, 15deg);
+}
+.card_1::before{
+    background: linear-gradient(165deg, #ff9d00 -11.44%, #ff006a 105.25%); 
+}
+.card_2::before{
+    background: linear-gradient(165deg, #dd00ff -11.44%, #003cffd8 105.25%);
+}
+.card_3::before{
+    background: linear-gradient(165deg, #32F3FF -8.59%, #32F3FF 19.55%, #1F9B00 92.5%);
+}
+
+
+.card_1:hover::before{
+    transform: skew(0, 0);
+    transition: transform 2s;
+    
+} 
+.card_1:hover{
+    .card_1_aft{
+        opacity: 0.5;
+        transition: opacity 2s;
+        animation: move_up 3s ease-in-out forwards;
+    }
+    .card_1_bef{
+        opacity: 0.5;
+        transition: opacity 2s;
+        animation: move_down 3s ease-in-out forwards;
+    }
+}
+
+
+.card_1_bef, .card_2_bef, .card_3_bef{
+    width: 22%;
+    height: 45%;
+    position: absolute;
+    border-radius: 1rem;
+    opacity: 0;
+    top: -3.5rem;
+    justify-content: center;
+    align-items: center;
+    left: 8.7em;
+    background: gray;
+}
+.card_1_aft, .card_2_aft, .card_3_aft{
+    width: 22%;
+    height: 45%;
+    position: absolute;
+    border-radius: 1rem;
+    opacity: 0;
+    top: 9.3rem;
+    justify-content: center;
+    align-items: center;
+    left: 15em;
+    background: gray;
+}
+.card_2:hover::before{
+    transform: skew(0, 0);
+    transition: transform 2s;
+    
+} 
+.card_2:hover{
+    .card_2_aft{
+        opacity: 0.5;
+        transition: opacity 2s;
+        animation: move_up 3s ease-in-out forwards;
+    }
+    .card_2_bef{
+        opacity: 0.5;
+        transition: opacity 2s;
+        animation: move_down 3s ease-in-out forwards;
+    }
+}
+
+.card_3:hover::before{
+    transform: skew(0, 0);
+    transition: transform 2s;
+    
+} 
+.card_3:hover{
+    .card_3_aft{
+        opacity: 0.5;
+        transition: opacity 2s;
+        animation: move_up 3s ease-in-out forwards;
+    }
+    .card_3_bef{
+        opacity: 0.5;
+        transition: opacity 2s;
+        animation: move_down 3s ease-in-out forwards;
+    }
+}
+
+p, a{
+    font-size: 1rem;
+}
+
+a{
+    color: #4d4ae8;
+    text-decoration: none;
+}
+
+
+@keyframes move_up {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(100%);
+    }
+}
+@keyframes move_down {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-100%);
+    }
+}
+.social{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    flex-direction: row;
+}
+
+
+.telegram, .vk, .youtube{
+    display: flex;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    margin: 0.5em 2em;
+    align-items: center;
+    justify-content: center;
+    border: #000 0.2em solid;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 100;
+}
+.telegram::before, .vk::before, .youtube::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(165deg, #c02323 -11.44%, #ffcc00 105.25%);
+    position: absolute;
+    top: -100%;
+    transition: all 1s ease;
+    z-index: -1;
+}
+.telegram:hover::before, .vk:hover::before, .youtube:hover::before{
+    top: 0;
+}

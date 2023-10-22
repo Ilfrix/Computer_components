@@ -1,0 +1,140 @@
+:root{
+    --index: calc(3-5);
+}
+
+body{
+    /* padding: 4.5rem; */
+    /* margin: 1%;
+    padding: 5%; */
+    align-items: center;
+    margin: 0px auto;
+    padding: 60px 0px 0px 0px;
+    justify-content: center;
+    /* text-align: center; */
+    background: linear-gradient(90deg, #282828 10%, #3e3d3e 62%);
+    font-family: "Inter", sans-serif;
+}
+
+.register{
+    left: 33%;
+    width: 25em;
+    position: absolute;
+    background-color: #212121;
+    top: 20%;
+}
+.reg_h, .forget, .no_acc{
+    color: white;
+}
+
+.ref{
+    color: orange;
+}
+
+.input{
+    width: 30%;
+    height: 150%;
+    font-size: 25px;
+    color:#3e3d3e;
+    border-radius: 9em;
+}
+
+#name, #password{
+    padding: 10%;
+    font-size: 2em;
+    width: 70%;
+    height: 0.1em;
+    background-color: #8a8686;
+    border-radius: 30px;
+}
+
+.blocks{
+    display: flex;
+}
+
+.block_1{
+    height: 5em;
+    width: 5em;
+    position: absolute;
+    opacity: 0.3;
+    top: 50%;
+    left: 59%;
+    z-index: var(--index);
+    background-color: rgb(0, 0, 0);
+    animation: move_right 7s alternate-reverse infinite ease-in-out;
+}
+.block_2{
+    height: 7em;
+    width: 7em;
+    position: absolute;
+    opacity: 0.3;
+    top: 40%;
+    left: 26%;
+    z-index: -1;
+    background-color: rgb(0, 0, 0);
+    animation: move_left 8s alternate-reverse infinite ease-in-out;
+}
+.block_3{
+    height: 2em;
+    width: 2em;
+    position: absolute;
+    opacity: 0.3;
+    top: 11%;
+    left: 40%;
+    z-index: -1;
+    background-color: rgb(0, 0, 0);
+    animation: move_up 6s alternate-reverse infinite ease-in-out;
+}
+.block_4{
+    height: 7em;
+    width: 7em;
+    position: absolute;
+    opacity: 0.3;
+    top: 90%;
+    left: 35%;
+    z-index: -1;
+    background-color: rgb(0, 0, 0);
+    animation: move_down alternate-reverse infinite ease-in-out;
+    animation-duration: 9s
+}
+
+.register::before{
+    height: 100px;
+    width: 100px;
+    background-color: tomato;
+    position: absolute;
+    z-index: 100;
+}
+
+
+@keyframes move_up {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(100%);
+    }
+}
+@keyframes move_down {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-100%);
+    }
+}
+@keyframes move_right {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(100%);
+    }
+}
+@keyframes move_left {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}

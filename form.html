@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_reg.css">
+    <title>Регистрация</title>
+</head>
+<body>
+    <div class="blocks">
+        <div class="block_1"></div>
+        <div class="block_2"></div>
+        <div class="block_3"></div>
+        <div class="block_4"></div>
+        <div class="block_5"></div>
+    </div>
+    <div class="register">
+    <form action="" enctype="text/plain" method="get">
+        <fieldset >
+        <h1 class="reg_h">Регистрация</h1>
+        <p>
+            <input type="text" name="name" id="name" min="3" max="20" pattern="[а-яА-Я]*" placeholder="Логин" checked required>
+        </p>
+
+        <p>
+            <input type="password" name="password" id="password" min="8" max="20" placeholder="Пароль" checked required>
+    
+        </p>
+        <p>
+            <input type="submit" class="input" value="Войти">
+        </p>
+        <!-- <button name="reset" type="reset">Сброс</button>
+        <input type="submit" value="Отправить"> -->
+        <p class="forget">Забыли пароль?<a href="#" class="ref">Перейти</a></p>
+        <p class="no_acc">Еще нет аккаунта?<a href="#" class="ref">Зарегистрироваться</a></p>
+        </fieldset>
+
+    </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+@keyframe - ключевой кадр
+animation-name(animation) - название keyfram'а
+animation-duration - продолжительность анимации
+animation-iteration-count - количество раз проигрываемой анимации
+animation-direction - порядок проигрывания анимации
+animation-timing-function - временная функция анимации
+animation-delay - задержка анимации
+animation-play-state - статус проигрывания анимации
+animation-fill-mode - стили ключевых кадров до/после проигрывания
+animation - все выше, одним свойством
+
+transition(transition-property|transition-duration|transition-timing-function|transition-delay)
+ - плавное изменение css-свойства
+Искл visibility, z-index
+transform - трансформации(искажение, поворот, смещение, масштабирование)
+
+Для transform:
+translate(X, Y) - смещение элемента вправо-влево и вверх-вниз
+translateX(X), translateY(Y), translateZ(Z) - смещение по одной оси
+translate3d(X, Y, Z) - смещение элемента по всем осям
+
+scale(X, Y) - аналогично translate
+
+skewX(x), skewY(y) - сдвиг стороны относительно противолежащей
+
+rotate() - поворот аналогичный translate, но без трех параметров у rotate()
+
+matrix() - матричные преобразования
+matrix3d() - матричные преобразования в 3д
+perspective(Z) - перспектива
+
+box-shadow - тень для блока
