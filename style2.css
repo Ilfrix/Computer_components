@@ -16,7 +16,7 @@ body{
     height: auto;
     margin: 1%;
     z-index: 0;
-    margin: 0 0 9em 0.5em;
+    margin: 3em 0 9em 0.5em;
     position:static;
     padding: 1rem;
     border-radius: 1rem;
@@ -181,19 +181,20 @@ a{
     padding: 2% 1% 0% 3%;
     width: 26%;
     height: 30%;
-    margin: 1em 0 3em 2em;
+    margin: 1em auto 3em;
 }
 
 .ref_1, .ref_2, .ref_3{
     justify-content: center;
     text-align: center;
     position: relative;
-    left: 30%;
+    /* left: 30%; */
+    background-color: white;
     height: 3em;
     width: 7em;
     border-radius: 30px;
 }
-.ref_1{
+/* .ref_1{
     background-color: orange;
 }
 .ref_2{
@@ -201,7 +202,7 @@ a{
 }
 .ref_3{
     background-color: purple;
-}
+} */
 
 .hid_card_1:hover{
     ~ .hid_card_2{
@@ -255,13 +256,231 @@ a{
 .hid_card-title_3{
     color: purple;
 }
-.hid_card_1::before{
+
+.brutal_cards{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.shine_1, .shine_2, .shine_3{
     position: relative;
-    width: 100px;
-    height: 100px;
+    content: "";
+    width: 26%;
+    height: 240px;
     left: 0;
-    background-color: red;
-    background: #000;
+    margin: 0 auto 0;
+    opacity: 0.5;
+    top: 100%;
+    /* background: linear-gradient(90deg, #21307c, #0585d5); */
+    color: purple;
+}
+
+
+.br_card_1, .br_card_2, .br_card_3{
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.7;
+    height: 99%;
+    width: 99%;
+    color: white;
+    overflow: hidden;
+    text-align: center;
+    background: linear-gradient(90deg, #0b1757 50%, #00083d 50%);
+}
+
+.shine_1:before, .shine_2:before, .shine_3:before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    overflow: hidden;
+    background: linear-gradient(90deg, #21307c, #0585d5);
+}
+
+.shine_1:hover:before, .shine_2:hover:before, .shine_3:hover:before{
+    opacity: 1;
+    animation: rotate_back 1s infinite;
+}
+.shine_1:hover, .shine_2:hover, .shine_3:hover{
+    opacity: 1;
+    transition: opacity 2s;
+}
+.shine_1:hover{
+    .br_card_1{
+        opacity: 1;
+        transition: opacity 2s;
+    }
+}
+.shine_2:hover{
+    .br_card_2{
+        opacity: 1;
+        transition: opacity 2s;
+    }
+}
+.shine_3:hover{
+    .br_card_3{
+        opacity: 1;
+        transition: opacity 2s;
+    }
+}
+.shine_1:hover{
+    ~ .shine_2{
+        opacity: 0.3;
+        transition: opacity 2s;
+        .br_card_2{
+            opacity: 0.3;
+            transition: opacity 2s; 
+        }
+    }
+    ~ .shine_3{
+        opacity: 0.3;
+        transition: opacity 2s;
+        .br_card_3{
+            opacity: 0.3;
+            transition: opacity 2s; 
+        }
+    }
+}
+.shine_2:hover{
+    ~ .shine_3{
+        opacity: 0.3;
+        transition: opacity 2s;
+        .br_card_3{
+            opacity: 0.3;
+            transition: opacity 2s; 
+        }
+    }
+}
+.shine_1:has(+ .shine_2:hover){
+    opacity: 0.3;
+    transition: opacity 2s;
+    .br_card_1{
+        opacity: 0.3;
+        transition: opacity 2s; 
+    }
+
+}
+
+.shine_1:has(~  .shine_3:hover){
+    opacity: 0.3;
+    transition: opacity 2s;
+    .br_card_1{
+        opacity: 0.3;
+        transition: opacity 2s; 
+    }
+
+}
+
+.shine_2:has(+ .shine_3:hover){
+    opacity: 0.3;
+    transition: opacity 2s;
+    .br_card_2{
+        opacity: 0.3;
+        transition: opacity 2s; 
+    }
+
+}
+/* 
+
+.br_card_1:has(+ .br_card_2:hover){
+    opacity: 0.3;
+    transition: opacity 2s;
+}
+.br_card_1:hover{
+    ~ shine_2{
+        opacity: 0.1;
+        transition: opacity 2s;
+        .br_card_2{
+            opacity: 0.3;
+            transition: opacity 2s;
+        }
+    }
+    ~ .br_card_3{
+        opacity: 0.3;
+        transition: opacity 2s;
+    }
+} */
+/*
+
+.shine_1:hover .br_card_1{
+    opacity: 1;
+    transition: opacity 1s;
+    
+}
+.shine_2:hover{
+    .br_card_2{
+        opacity: 1;
+        transition: opacity 1s;
+    }
+}
+.shine_3:hover{
+    .br_card_3{
+        opacity: 1;
+        transition: opacity 1s;
+    }
+}
+.shine_2:before{
+    .br_card_2:has(+ .br_card_3:hover){
+        opacity: 0.3;
+        transition: opacity 2s;
+    }
+} */
+/* .br_card_3:hover{
+
+}
+.br_card_1:hover{
+    ~ .shine_2{
+        opacity: 0.3;
+        transition: opacity 2s;
+    }
+    ~ .br_card_3{
+        opacity: 0.3;
+        transition: opacity 2s;
+    }
+} */
+/* .br_card_1:has(+ .br_card_2:hover){
+    opacity: 0.3;
+    transition: opacity 2s;
+}
+
+.br_card_2:hover {
+    ~ .br_card_3{
+        opacity: 0.3;
+        transition: opacity 2s;
+    }
+}
+
+.br_card_2:has(+ .br_card_3:hover){
+    opacity: 0.3;
+    transition: opacity 2s;
+}
+.br_card_1:has(~ .br_card_3:hover){
+    opacity: 0.3;
+    transition: opacity 2s;
+} */
+
+@keyframes rotate_back{
+    25%{
+        transform: translateX(1px);
+    }
+    50%{
+        transform: translateY(1px);
+    }
+    75%{
+        transform: translateX(-5px);
+    }
+    100%{
+        transform: translateY(-3px);
+    }
+
 }
 
 
