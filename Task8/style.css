@@ -248,7 +248,7 @@
     display: grid;
     width: 100%;
     grid-template-rows: repeat(5, 100px);
-    grid-template-columns: repeat(2, 390px);
+    grid-template-columns: repeat(2, 48%);
     gap: 1em;
     grid-auto-flow: row dense;
 }
@@ -266,8 +266,8 @@
 #name{
     position: relative;
     display: grid;
-    grid-column: 1 / 2;
     grid-row: 2 / 3;
+    grid-column: 1 / 2;
     color: white;
     font-size: 20px;
     background: none;
@@ -316,11 +316,71 @@
     color: white;
     font-size: 20px;
 }
-#name{
+/* #name{
     width: 100%;
     height: 100%;
-}
+} */
 
 #name:focus, #surname:focus, #phone:focus, #email:focus, #text:focus{
-    background: aqua;
+    background-color: aqua;
+}
+#name:focus:hover{
+    background-color: aqua;
+    content: "awesrfdgh";
+    transform: translate(-10px, -10px);
+    transition: transform 2s, background-color 2s;
+}
+#surname:focus:hover{
+    background-color: aqua;
+    content: "awesrfdgh";
+    transform: translate(10px, -10px);
+    transition: transform 2s, background-color 2s;
+}
+#email:focus:hover{
+    background-color: aqua;
+    content: "awesrfdgh";
+    transform: translate(-10px, 10px);
+    transition: transform 2s, background-color 2s;
+}
+#phone:focus:hover{
+    background-color: aqua;
+    content: "awesrfdgh";
+    transform: translate(10px, 10px);
+    transition: transform 2s, background-color 2s;
+}
+#text:focus:hover{
+    background-color: aqua;
+    transform: translate(0, 10px);
+    transition: transform 2s, background-color 2s;
+}
+@media (max-width: 712px) {
+    #name{
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+    }
+    #surname{
+        grid-row: 3 / 4;
+        grid-column: 1 / 3;
+    }
+    #email{
+        grid-row: 4 / 5;
+        grid-column: 1 / 3;
+    }
+    #phone{
+        grid-row: 5 / 6;
+        grid-column: 1 / 3;
+    }
+    #text{
+        grid-row: 6 / 7;
+        grid-column: 1 / 3;
+    }
+    .input{
+        width: 100%;
+        height: 100%;
+        color: white;
+        font-size: 20px;
+        grid-row: 7 / 8;
+        grid-column: 1 / 3;
+    }
+    
 }
