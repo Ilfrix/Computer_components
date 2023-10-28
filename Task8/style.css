@@ -82,22 +82,22 @@
 @media (max-width: 600px) {
     .wrapper .navigation{
         grid-row: 2 / 3;
-        grid-column: 1 / 4;
+        grid-column: 1 / 6;
         display: flex;
     }
     .wrapper .main{
         grid-row: 4 / 5;
-        grid-column: 1 / 4;
+        grid-column: 1 / 6;
         display: flex;
     }
     .wrapper .sidebar{
         grid-row: 5 / 6;
-        grid-column: 1 / 4;
+        grid-column: 1 / 6;
         display: flex;
     }
     .wrapper .ads{
         grid-row: 6 / 7;
-        grid-column: 1 / 4;
+        grid-column: 1 / 6;
         display: flex;
     }
 
