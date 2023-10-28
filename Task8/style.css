@@ -25,7 +25,8 @@
 }
 
 .wrapper > .main{
-    
+    display: flex;
+    flex-direction: column;
     background-color: blue;
     grid-row: 3 / 4;
     grid-column: 2 / 5;
@@ -384,11 +385,17 @@
     }
     
 }
+.footer{
+    display: flex;
+    flex-direction: column;
+}
 @media (min-width:1001px){
     .footer_1{
         display: grid;
         grid-template-rows: repeat(1, 160px);
-        grid-template-columns: repeat(4, 25%) ;
+        grid-template-columns: repeat(4, 25%);
+        background-color: rgb(59, 144, 255);
+        color:white;
     }
 
     .about{
@@ -415,6 +422,7 @@
 @media (min-width: 769px) and (max-width: 1000px) {
     .footer_1{
         display: grid;
+        width: 100%;
         grid-template-rows: repeat(2, 160px);
         grid-template-columns: repeat(2, 50%) ;
     }
@@ -465,4 +473,14 @@
         grid-row: 4 / 5;
         grid-column: 1 / 2;
     }
+}
+
+.copyright{
+    display:flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 162);
+    color: white;
+    /* justify-self: end; */
 }
