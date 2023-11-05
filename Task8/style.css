@@ -524,3 +524,68 @@
     width: 200px;
     transition: opacity 2s, width 2s;
 }
+
+.like{
+    background-color:blue;
+    content: "";
+    width: 60px;
+    height: 60px;
+}
+
+.icon_wrap{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    content: "";
+    background-color: white;
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+}
+.like_icon{
+    width: 30px;
+    position: relative;
+    height: 30px;
+    top: 7px;
+    left: 7px;
+    padding: 3px;
+    border-radius: 40%;
+}
+.btn{
+    left: 0;
+}
+.lovely-button{
+    display: flex;
+    width: 100px;
+    height: 75px;
+    background: white;
+    border: none;
+    border-radius: 40px;
+    margin: 0;
+    flex-direction: row;
+    position: relative;
+    transition: all 0.3s ease; 
+    align-items: center;
+    justify-content: center;
+    z-index: 4; 
+}
+
+.lovely-button.new-color {
+    background: red;
+}
+.lovely-button:hover{
+    opacity: 0.9;
+}
+.lovely-button img {
+    height: 70px;
+    width: 50px;
+}
+
+.b-text{
+    font-size: 40px;
+}
+.new-image{
+    position: absolute;
+    width: 50px;
+    height: 70px;
+}
