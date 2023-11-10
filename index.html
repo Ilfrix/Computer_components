@@ -7,6 +7,7 @@
         <link rel="icon" type="image/png" href="./images/favicon.png">
         <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,700&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="style.css">
+        
     </head>
     
 
@@ -190,9 +191,9 @@
         <br>
 
 
-        <div style="width: 250px; height:700px;">
+        <div style="width: 250px; height:800px;">
             <a><b>Хотите работать у нас?</b></a>
-        <form action="" enctype="text/plain" method="get">
+        <form action="" id='form' enctype="text/plain" method="get" onsubmit="return false;">
             <fieldset >
                 <legend>Регистрация</legend>
             <p>
@@ -251,8 +252,16 @@
                 <input type="checkbox" name="agrees" id="agrees" required>
         
             </p>
+            <p>
+                <label id="captcha">Новое</label><br>
+                <input type="text" id="capt" placeholder="Капча" checked required>
+                
+            </p>
+            
+            
             <button name="reset" type="reset">Сброс</button>
-            <input type="submit" value="Отправить">
+            <input type="submit" id="sub" value="Отправить" onsubmit="return false;">
+            <script src="captcha.js"></script>
             </fieldset>
         </form>
         </div>
