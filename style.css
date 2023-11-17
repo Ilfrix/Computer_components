@@ -657,3 +657,21 @@ input:checked ~ * .header__menu {
     transition: opacity 1s;
     opacity: 1;
 }
+
+
+#basket{
+    content: "";
+    width: 40px;
+    height: 40px;
+    top: 0;
+    position: relative;
+    background-size: cover;
+    background-image: url('./images/basket.png');
+}
+
+#basket_add{
+    position: relative;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+}
