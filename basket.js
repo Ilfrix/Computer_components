@@ -1,5 +1,7 @@
 var basket_value = document.getElementById('basket_value');
-var basket_list = document.getElementById("basket_list")
+var basket_list = document.getElementById("basket_list");
+var basket_down = document.getElementById("basket_down");
+var basket_up = document.getElementById("basket_up");
 
 
 function Accumulator(stringValue){
@@ -47,3 +49,46 @@ basket.onclick = function() {
     arr.pop();
     console.log(arr);
 }
+
+var t = [3, 4, 7, 8, 9, 4, 3, 56, 7, 8, 9, 8, 76, 54, 3, 2, 1, 45, 6, 7, 8];
+
+function sort_slice(arr, start, end){
+    result = new Array();
+    for (let i = 0; i < arr.length; ++i) {
+        if (arr[i] >= start && arr[i] <= end) {
+            result.push(arr[i]);
+        }
+    }
+    return result;
+}
+
+function sort(){
+    console.log("start");
+    for (let i = 0; i < arr.length; ++i) {
+        for (let j = i + 1; j < arr.length; ++j) {
+            if (arr[i].value > arr[j].value) {
+                let tmp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tmp;
+            }
+        }
+    }
+    ul = document.getElementById("basket_list");
+    ul.innerHTML = "";
+    for (let i = 0; i < arr.length; ++i){
+        let li = document.createElement("li");
+        li.id = `li ${i}`;
+        li.innerHTML = arr[i].value;
+        let bt_li = document.createElement("button");
+        bt_li.id = `bt_li ${i}`;
+        bt_li.innerHTML = '+';
+        basket_list.append(li);
+        li.append(bt_li);
+    }
+    console.log(arr);
+    return arr;
+}
+basket_up.addEventListener('click', sort);
+// basket_down.click(sort(arr));
+// basket_down.addEventListener('click', sort(arr));
+// console.log(sort_slice(t, 2, 7));

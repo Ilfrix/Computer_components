@@ -675,3 +675,19 @@ input:checked ~ * .header__menu {
     width: 40px;
     height: 40px;
 }
+
+#basket_up{
+    transform: rotate(90deg);
+    position: relative;
+    width: 40px;
+    height: 40px;
+    top: 5px;
+}
+
+#basket_down{
+    transform: rotate(-90deg);
+    position: relative;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+}
