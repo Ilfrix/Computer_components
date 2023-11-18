@@ -21,33 +21,40 @@ basket_add.onclick = function() {
     let temp = new Accumulator(0);
     temp.read();
     basket_value.innerText = Number(basket_value.innerHTML) + Number(temp.value);
-    let li = document.createElement("li");
-    li.id = `li ${count_li}`;
-    li.innerHTML = temp.value;
-    let bt_li = document.createElement("button");
-    bt_li.id = `bt_li ${count_li}`;
-    bt_li.innerHTML = '+';
-    last_product.push(temp.value);
-    bt_li.onclick = function (){
-        cur_sum = document.getElementById(`li ${bt_li.id.substring(6)}`);
-        let value = Number(cur_sum.innerText.substring(0, cur_sum.innerText.length - 1))
-        basket_value.innerHTML = Number(basket_value.innerHTML) + value;
-        last_product[Number(bt_li.id.substring(6))] += value;
-    }
+    createProductElement(temp, count_li);
     ++count_li;
     
+    arr.push(temp);
+    last_product.push(temp.value);
+}
+
+function createProductElement(obj, id){
+    let li = document.createElement("li");
+    li.id = `li ${id}`;
+    li.innerHTML = obj.value;
+    let bt_li = document.createElement("button");
+    bt_li.id = `bt_li ${id}`;
+    bt_li.innerHTML = '+';
+    
+    bt_li.onclick = function (){
+        cur_sum = document.getElementById(`li ${id}`);
+        let value = Number(cur_sum.innerText.substring(0, cur_sum.innerText.length - 1))
+        basket_value.innerHTML = Number(basket_value.innerHTML) + value;
+        last_product[id] += value;
+    }
 
     basket_list.append(li);
     li.append(bt_li);
-    arr.push(temp);
 }
 basket.onclick = function() {
-    let elem = document.getElementById(`li ${--count_li}`)
-    basket_value.innerHTML = Number(basket_value.innerHTML) - last_product[last_product.length - 1];
-    last_product.pop();
-    elem.remove();
-    arr.pop();
-    console.log(arr);
+    if (count_li >= 1) {
+        let elem = document.getElementById(`li ${--count_li}`)
+        basket_value.innerHTML = Number(basket_value.innerHTML) - last_product[last_product.length - 1];
+        last_product.pop();
+        elem.remove();
+        arr.pop();
+        console.log(arr);
+    }
 }
 
 var t = [3, 4, 7, 8, 9, 4, 3, 56, 7, 8, 9, 8, 76, 54, 3, 2, 1, 45, 6, 7, 8];
@@ -62,8 +69,7 @@ function sort_slice(arr, start, end){
     return result;
 }
 
-function sort_up(){
-    // console.log("start");
+function sortProduct(){
     for (let i = 0; i < arr.length; ++i) {
         for (let j = i + 1; j < arr.length; ++j) {
             if (arr[i].value > arr[j].value) {
@@ -76,66 +82,30 @@ function sort_up(){
             }
         }
     }
+}
+
+function sortDown(){
+    sortProduct();
     arr.reverse();
     last_product.reverse();
     ul = document.getElementById("basket_list");
     ul.innerHTML = "";
     for (let i = 0; i < arr.length; ++i){
-        let li = document.createElement("li");
-        li.id = `li ${i}`;
-        li.innerHTML = arr[i].value;
-        let bt_li = document.createElement("button");
-        bt_li.id = `bt_li ${i}`;
-        bt_li.innerHTML = '+';
-        bt_li.onclick = function (){
-            cur_sum = document.getElementById(`li ${bt_li.id.substring(6)}`);
-            let value = Number(cur_sum.innerText.substring(0, cur_sum.innerText.length - 1))
-            basket_value.innerHTML = Number(basket_value.innerHTML) + value;
-            last_product[Number(bt_li.id.substring(6))] += value;
-        }
-        basket_list.append(li);
-        li.append(bt_li);
+        createProductElement(arr[i], i);
     }
-    console.log(arr);
     return arr;
 }
-function sort_down(){
-    // console.log("start");
-    for (let i = 0; i < arr.length; ++i) {
-        for (let j = i + 1; j < arr.length; ++j) {
-            if (arr[i].value > arr[j].value) {
-                let tmp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = tmp;
-                tmp = last_product[i];
-                last_product[i] = last_product[j];
-                last_product[j] = tmp;
-            }
-        }
-    }
+function sortUp(){
+    sortProduct();
     ul = document.getElementById("basket_list");
     ul.innerHTML = "";
     for (let i = 0; i < arr.length; ++i){
-        let li = document.createElement("li");
-        li.id = `li ${i}`;
-        li.innerHTML = arr[i].value;
-        let bt_li = document.createElement("button");
-        bt_li.id = `bt_li ${i}`;
-        bt_li.innerHTML = '+';
-        bt_li.onclick = function (){
-            cur_sum = document.getElementById(`li ${bt_li.id.substring(6)}`);
-            let value = Number(cur_sum.innerText.substring(0, cur_sum.innerText.length - 1))
-            basket_value.innerHTML = Number(basket_value.innerHTML) + value;
-            last_product[Number(bt_li.id.substring(6))] += value;
-        }
-        basket_list.append(li);
-        li.append(bt_li);
+        createProductElement(arr[i], i);
     }
     console.log(arr);
     return arr;
 }
-basket_up.addEventListener('click', sort_up);
-basket_down.addEventListener('click', sort_down);
-// basket_down.click(sort(arr));
-// basket_down.addEventListener('click', sort(arr));
-// console.log(sort_slice(t, 2, 7));
+
+basket_up.addEventListener('click', sortUp);
+basket_down.addEventListener('click', sortDown);
+// console.log(sort_slice(t, 2, 7)); for 3 number
