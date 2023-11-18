@@ -62,14 +62,54 @@ function sort_slice(arr, start, end){
     return result;
 }
 
-function sort(){
-    console.log("start");
+function sort_up(){
+    // console.log("start");
     for (let i = 0; i < arr.length; ++i) {
         for (let j = i + 1; j < arr.length; ++j) {
             if (arr[i].value > arr[j].value) {
                 let tmp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = tmp;
+                tmp = last_product[i];
+                last_product[i] = last_product[j];
+                last_product[j] = tmp;
+            }
+        }
+    }
+    arr.reverse();
+    last_product.reverse();
+    ul = document.getElementById("basket_list");
+    ul.innerHTML = "";
+    for (let i = 0; i < arr.length; ++i){
+        let li = document.createElement("li");
+        li.id = `li ${i}`;
+        li.innerHTML = arr[i].value;
+        let bt_li = document.createElement("button");
+        bt_li.id = `bt_li ${i}`;
+        bt_li.innerHTML = '+';
+        bt_li.onclick = function (){
+            cur_sum = document.getElementById(`li ${bt_li.id.substring(6)}`);
+            let value = Number(cur_sum.innerText.substring(0, cur_sum.innerText.length - 1))
+            basket_value.innerHTML = Number(basket_value.innerHTML) + value;
+            last_product[Number(bt_li.id.substring(6))] += value;
+        }
+        basket_list.append(li);
+        li.append(bt_li);
+    }
+    console.log(arr);
+    return arr;
+}
+function sort_down(){
+    // console.log("start");
+    for (let i = 0; i < arr.length; ++i) {
+        for (let j = i + 1; j < arr.length; ++j) {
+            if (arr[i].value > arr[j].value) {
+                let tmp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tmp;
+                tmp = last_product[i];
+                last_product[i] = last_product[j];
+                last_product[j] = tmp;
             }
         }
     }
@@ -82,13 +122,20 @@ function sort(){
         let bt_li = document.createElement("button");
         bt_li.id = `bt_li ${i}`;
         bt_li.innerHTML = '+';
+        bt_li.onclick = function (){
+            cur_sum = document.getElementById(`li ${bt_li.id.substring(6)}`);
+            let value = Number(cur_sum.innerText.substring(0, cur_sum.innerText.length - 1))
+            basket_value.innerHTML = Number(basket_value.innerHTML) + value;
+            last_product[Number(bt_li.id.substring(6))] += value;
+        }
         basket_list.append(li);
         li.append(bt_li);
     }
     console.log(arr);
     return arr;
 }
-basket_up.addEventListener('click', sort);
+basket_up.addEventListener('click', sort_up);
+basket_down.addEventListener('click', sort_down);
 // basket_down.click(sort(arr));
 // basket_down.addEventListener('click', sort(arr));
 // console.log(sort_slice(t, 2, 7));
