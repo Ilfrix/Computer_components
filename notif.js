@@ -12,7 +12,6 @@ function create_notif(){
 
 function delayDecorator(func, delay) {
   let timeoutId;
-  console.log("delay");
   clearTimeout(timeoutId);
   return function() {
     timeoutId = setTimeout(func, delay);
