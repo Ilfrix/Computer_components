@@ -29,3 +29,12 @@ document.getElementsByClassName('image__button')[0].addEventListener('click', fu
     note = setInterval(delayedCreateNotif, 3000);
   count++; 
 });
+
+function showNotification(){
+  notification = document.createElement('div');
+  notification.className = "notification";
+  notification.innerHTML = "<strong>Всем привет!</strong> Вы прочитали важное сообещение";
+  document.body.append(notification);
+  setTimeout (() => notification.remove(), 2500);
+}
+showNotification();

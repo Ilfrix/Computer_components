@@ -694,3 +694,10 @@ input:checked ~ * .header__menu {
     width: 40px;
     height: 40px;
 }
+
+.notification{
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    z-index: 1000;
+}
