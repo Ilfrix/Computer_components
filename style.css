@@ -534,14 +534,17 @@ input:checked ~ * .header__menu {
 .dropdown {
     position: flex;
     display: inline-block;
+    width: 100px;
+    /* background-color: red; */
 }
 .image__button{
     z-index: 2;
     position: relative;
     display: flex;
     background-image: url('./images/bell.png');
-    width: 100px;
-    height: 100px;
+    top: -8px;
+    width: 90px;
+    height: 90px;
     border: none;
     background-size: cover;
     border-radius: 50%;
