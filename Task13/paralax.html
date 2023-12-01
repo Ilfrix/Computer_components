@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      height: 2000px;
+      margin: 0;
+    }
+    .wrapper{
+      display: inline-flex;
+    }
+    .parallax {
+      background-image: url('../images/bell.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      object-fit: cover;
+      height: 500px;
+      width: 500px;
+      top: 100px;
+      position: relative;
+      display: flex;
+    }
+    .parallax2 {
+      background-image: url('../images/bell.png');
+      background-position: center;
+      background-size: cover;
+      object-fit: cover;
+      height: 500px;
+      width: 500px;
+      top: 100px;
+      display: flex;
+      left: 500px;
+      position: relative;
+      z-index: -1;
+    }
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .notif{
+      display: none;
+      justify-content: center;
+      left: 45%;
+      top: 10%;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="parallax"></div>
+    <div class="content">
+      <h1>Parallax Effect</h1>
+      <p>Scroll down to see the effect in action</p>
+    </div>
+    <div class="parallax2"></div>
+    
+  </div>
+  <script>
+    var flag = false;
+    window.addEventListener('scroll', function() {
+      let offset = window.pageYOffset;
+      document.getElementsByClassName('parallax')[0].style.backgroundPositionY = offset * 0.3 + 'px';
+      document.getElementsByClassName('parallax2')[0].style.backgroundPositionY = offset * 0.3 + 'px';
+    });
+    window.addEventListener('scroll', function(event) {
+      if (window.pageYOffset >= 600 && !flag) {
+        var note = document.createElement('h1');
+        note.innerHTML = "NEW NOTIFICATION!!!!!!";
+        note.style.position = 'relative';
+        note.style.top = 10 + '%';
+        var screen = window.innerWidth;
+        note.style.left = (screen - note.offsetWidth) / 2 - 185 + 'px';
+        document.body.append(note);
+        flag = true;
+      }
+
+      else if(flag && window.pageYOffset < 600){
+        flag = false;
+      }
+    })
+  </script>
+</body>
+</html>
