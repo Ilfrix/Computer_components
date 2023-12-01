@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div id="block" style="background-color: red; width: 150px;height: 150px;">
+    <img id="image" src="../images/basket.png" width="30px" height="30px">
+  </div>
+  <script>
+    var element = document.getElementById('block');
+    var image = document.getElementById('image');
+
+    //размеры экрана
+    var screenWidth = window.innerWidth;
+    var screenHeight = window.innerHeight;
+
+    //размеры элемента
+    var elementWidth = element.offsetWidth;
+    var elementHeight = element.offsetHeight;
+    var centerX = (screenWidth - elementWidth) / 2;
+    var centerY = (screenHeight - elementHeight) / 2;
+
+    // Устанавливаем новые координаты для элемента
+    element.style.position = 'absolute';
+    element.style.left = centerX + 'px';
+    element.style.top = centerY + 'px';
+
+    image.style.position = 'absolute';
+    image.style.left = (elementWidth - image.offsetWidth) / 2 + 'px';
+    image.style.top = (elementHeight - image.offsetHeight) / 2 + 'px';
+
+    document.addEventListener('click', function(event){
+      console.log("x=" + event.clientX + "\ty=" + event.clientY);
+    });
+
+  </script>
+</body>
+</html>

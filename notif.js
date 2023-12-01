@@ -35,6 +35,6 @@ function showNotification(){
   notification.className = "notification";
   notification.innerHTML = "<strong>Всем привет!</strong> Вы прочитали важное сообещение";
   document.body.append(notification);
-  setTimeout (() => notification.remove(), 2500);
+  setTimeout (() => notification.remove(), 5500);
 }
 showNotification();
