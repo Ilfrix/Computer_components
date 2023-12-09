@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Галерея</title>
+  <link rel="stylesheet" href="gallery.css">
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+  <p><img id="largeImg" src="https://www.svgrepo.com/show/520508/student.svg" alt="Large image"></p>
+
+  <ul id="thumbs">
+    <li>
+      <a href="https://www.svgrepo.com/show/530661/genetic-data.svg"><img src="https://www.svgrepo.com/show/530661/genetic-data.svg"></a>
+    </li>
+    <li>
+      <a href="https://www.svgrepo.com/show/530402/honor.svg"><img src="https://www.svgrepo.com/show/530402/honor.svg"></a>
+    </li>
+    <li>
+      <a href="https://www.svgrepo.com/show/416504/blogger-feed-foomla.svg"><img src="https://www.svgrepo.com/show/416504/blogger-feed-foomla.svg"></a>
+    </li>
+    <li>
+      <a href="https://www.svgrepo.com/show/530103/earth.svg"><img src="https://www.svgrepo.com/show/530103/earth.svg"></a>
+    </li>
+    <li>
+      <a href="https://www.svgrepo.com/show/509003/avatar-thinking-6.svg"><img src="https://www.svgrepo.com/show/509003/avatar-thinking-6.svg"></a>
+    </li>
+  </ul>
+
+  <script>
+    thumbs.onclick = function(event) {
+      let thumbnail = event.target.closest('a');
+
+      if (!thumbnail) return;
+      showThumbnail(thumbnail.href, thumbnail.title);
+      event.preventDefault();
+    }
+
+    function showThumbnail(href, title) {
+      largeImg.src = href;
+      largeImg.alt = title;
+    }
+  </script>
+
+</body>
+</html>
