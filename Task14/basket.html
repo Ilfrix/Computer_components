@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #basket_value{
+      font-size: 20px;
+    }
+    #basket{
+      content: "";
+      width: 40px;
+      height: 40px;
+      top: 0;
+      position: relative;
+      background-size: cover;
+      background-image: url('./images/basket.png');
+    }
+    #basket_add{
+      position: relative;
+      top: 5px;
+      width: 40px;
+      height: 40px;
+    }
+    #basket_up{
+      transform: rotate(90deg);
+      position: relative;
+      width: 40px;
+      height: 40px;
+      top: 5px;
+    }
+    #basket_down{
+      transform: rotate(-90deg);
+      position: relative;
+      top: 5px;
+      width: 40px;
+      height: 40px;
+    }
+    li {
+      list-style: none;
+    }
+    li img, img{
+      height: 100px;
+      width: 100px;
+    }
+    #store{
+      content: "";
+      background-image: url('./images/store.svg');
+      top: 0;
+      position: relative;
+      background-size: cover;
+      height: 100px;
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div id="">
+    <label id="basket_value">0</label>
+    <button name="add" id="basket_add">+</button>
+    <button name="basket" id="basket"></button>
+    <button name="basket_up" id="basket_up"><</button>
+    <button name="basket_down" id="basket_down"><</button>
+    <button id="store"></button>
+    <ul id="basket_list"></ul>
+    
+  </div>
+  <div id="catalog">
+    <ul id="list">
+      <li id="process">100<img src='./images/process.jpg'></li>
+      <li id="memory">90<img src='./images/memory_pic.jpg'></li>
+      <li id="block">50<img src='./images/system_block.jpg'></li>
+    </ul>
+  </div>
+  <script src="basket.js"></script>
+</body>
+</html>
