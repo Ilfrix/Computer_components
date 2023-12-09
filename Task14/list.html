@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    .selected {
+      background: rgb(255, 0, 115);
+    }
+  </style>
+</head>
+
+<body>
+
+  Задание 3, 14 работы
+  <br>
+
+  <ul id="list" onmousedown="return false;">
+    <li>Первый</li>
+    <li>Второй</li>
+    <li>Третий</li>
+    <li>Четвертый</li>
+    <li>Пятый</li>
+  </ul>
+
+  <script>
+    list.onclick = function(event) {
+      if (event.target.localName != "li") return;
+
+      if (event.ctrlKey || event.metaKey) {
+        toggleSelect(event.target);
+      } else {
+        singleSelect(event.target);
+      }
+
+    }
+
+    function toggleSelect(li) {
+      li.classList.toggle('selected');
+    }
+
+    function singleSelect(li) {
+      let selected = list.querySelectorAll('.selected');
+      for(let elem of selected) {
+        elem.classList.remove('selected');
+      }
+      li.classList.add('selected');
+    }
+
+  </script>
+
+</body>
+</html>
