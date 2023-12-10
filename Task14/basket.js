@@ -104,27 +104,27 @@ var list = document.getElementById('list');
 
 list.onmousedown = function(event) {
   event.preventDefault();
-  let ball = event.target.closest('img');
+  let obj = event.target.closest('img');
   let cost = event.target.closest('li').textContent;
-  var new_img = ball.cloneNode(true);
+  var new_img = obj.cloneNode(true);
   new_img.style.position = 'absolute';
-  new_img.style.left = ball.x + 'px';
-  new_img.style.top = ball.y + 'px';
+  new_img.style.left = obj.x + 'px';
+  new_img.style.top = obj.y + 'px';
   list.appendChild(new_img);
-  ball = new_img;
+  obj = new_img;
 
-  let shiftX = event.clientX - ball.getBoundingClientRect().left;
-  let shiftY = event.clientY - ball.getBoundingClientRect().top;
+  let shiftX = event.clientX - obj.getBoundingClientRect().left;
+  let shiftY = event.clientY - obj.getBoundingClientRect().top;
 
-  ball.style.position = 'absolute';
-  ball.style.zIndex = 1000;
-  document.body.append(ball);
+  obj.style.position = 'absolute';
+  obj.style.zIndex = 1000;
+  document.body.append(obj);
 
   moveAt(event.pageX, event.pageY);
 
   function moveAt(pageX, pageY) {
-    ball.style.left = pageX - shiftX + 'px';
-    ball.style.top = pageY - shiftY + 'px';
+    obj.style.left = pageX - shiftX + 'px';
+    obj.style.top = pageY - shiftY + 'px';
   }
 
   function onMouseMove(event) {
@@ -132,27 +132,49 @@ list.onmousedown = function(event) {
   }
 
   document.addEventListener('mousemove', onMouseMove);
-  ball.onmouseup = function(event) {
-    ball.hidden = true;
+  obj.onmouseup = function(event) {
+    obj.hidden = true;
     let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
-    ball.hidden = false;
+    obj.hidden = false;
 
     let dropButton = elemBelow.closest('#store');
     if (!dropButton) {
       document.removeEventListener('mousemove', onMouseMove);
-      ball.onmouseup = null;
-      ball.remove();
+      obj.onmouseup = null;
+      obj.remove();
       return false;
     }
     
     basket_value.innerHTML = Number(basket_value.innerHTML) + Number(cost);
     document.removeEventListener('mousemove', onMouseMove);
-    ball.onmouseup = null;
-    ball.remove();
+    obj.onmouseup = null;
+    obj.remove();
   };
 
 };
 
-ball.ondragstart = function() {
+obj.ondragstart = function() {
 return false;
 };
+
+var sq = document.getElementById('square');
+// sq.transform('rotate 90deg');
+function rotateObject() {
+    var element = document.getElementById('square');
+    var currentRotation = 0;
+
+    // Функция для вращения объекта
+    function rotate() {
+        currentRotation += 10;
+        element.style.transform = 'rotate(' + currentRotation + 'deg)';
+    }
+
+    // Вращаем объект каждые 100 миллисекунд
+    var interval = setInterval(rotate, 100);
+
+    // Останавливаем вращение через 1000 миллисекунд (1 секунда)
+    setTimeout(function() {
+        clearInterval(interval);
+    }, 1000);
+}
+rotateObject();
