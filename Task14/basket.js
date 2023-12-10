@@ -103,78 +103,94 @@ basket_down.addEventListener('click', sortDown);
 var list = document.getElementById('list');
 
 list.onmousedown = function(event) {
-  event.preventDefault();
-  let obj = event.target.closest('img');
-  let cost = event.target.closest('li').textContent;
-  var new_img = obj.cloneNode(true);
-  new_img.style.position = 'absolute';
-  new_img.style.left = obj.x + 'px';
-  new_img.style.top = obj.y + 'px';
-  list.appendChild(new_img);
-  obj = new_img;
+    event.preventDefault();
+    var obj = event.target.closest('img');
+    let cost = event.target.closest('li').textContent;
+    var new_img = obj.cloneNode(true);
+    new_img.style.position = 'absolute';
+    new_img.style.left = event.pageX + 'px';
+    new_img.style.top = event.pageY + 'px';
+    list.appendChild(new_img);
+    obj = new_img;
+    obj.ondragstart = function() {
+        return false;
+    };
 
-  let shiftX = event.clientX - obj.getBoundingClientRect().left;
-  let shiftY = event.clientY - obj.getBoundingClientRect().top;
+    let shiftX = event.clientX - obj.getBoundingClientRect().left;
+    let shiftY = event.clientY - obj.getBoundingClientRect().top;
 
-  obj.style.position = 'absolute';
-  obj.style.zIndex = 1000;
-  document.body.append(obj);
+    obj.style.position = 'absolute';
+    obj.style.zIndex = 1000;
+    document.body.append(obj);
 
-  moveAt(event.pageX, event.pageY);
-
-  function moveAt(pageX, pageY) {
-    obj.style.left = pageX - shiftX + 'px';
-    obj.style.top = pageY - shiftY + 'px';
-  }
-
-  function onMouseMove(event) {
     moveAt(event.pageX, event.pageY);
-  }
 
-  document.addEventListener('mousemove', onMouseMove);
-  obj.onmouseup = function(event) {
+    function moveAt(pageX, pageY) {
+        obj.style.left = pageX - shiftX + 'px';
+        obj.style.top = pageY - shiftY + 'px';
+    }
+
+    function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+    }
+
+    document.addEventListener('mousemove', onMouseMove);
+    obj.onmouseup = function(event) {
     obj.hidden = true;
     let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
     obj.hidden = false;
 
     let dropButton = elemBelow.closest('#store');
     if (!dropButton) {
-      document.removeEventListener('mousemove', onMouseMove);
-      obj.onmouseup = null;
-      obj.remove();
-      return false;
+        document.removeEventListener('mousemove', onMouseMove);
+        obj.onmouseup = null;
+        obj.remove();
+        return false;
     }
-    
+
     basket_value.innerHTML = Number(basket_value.innerHTML) + Number(cost);
     document.removeEventListener('mousemove', onMouseMove);
     obj.onmouseup = null;
     obj.remove();
-  };
+    };
 
 };
 
-obj.ondragstart = function() {
-return false;
-};
 
-var sq = document.getElementById('square');
-// sq.transform('rotate 90deg');
+
 function rotateObject() {
     var element = document.getElementById('square');
     var currentRotation = 0;
 
-    // Функция для вращения объекта
     function rotate() {
         currentRotation += 10;
         element.style.transform = 'rotate(' + currentRotation + 'deg)';
     }
-
-    // Вращаем объект каждые 100 миллисекунд
     var interval = setInterval(rotate, 100);
-
-    // Останавливаем вращение через 1000 миллисекунд (1 секунда)
     setTimeout(function() {
         clearInterval(interval);
-    }, 1000);
+    }, 100000);
 }
 rotateObject();
+
+function moveX() {
+    var elem = document.getElementById('triangle');
+    var currentX = 0;
+    var flag = 0;
+    function move(){
+        if (currentX <= 200 && flag == 0){
+            currentX += 10;
+        } else if ((currentX > 200 || flag == 1) && currentX >= 30){
+            currentX -= 10;
+            flag = 1
+        } else if(currentX < 30 && flag == 1){
+            flag = 0;
+        }
+        elem.style.left = currentX + 'px';
+    }
+    var interval = setInterval(move, 100);
+    setTimeout(function() {
+        clearInterval(interval);
+    }, 100000);
+}
+moveX();
