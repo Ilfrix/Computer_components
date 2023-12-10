@@ -122,8 +122,8 @@ h1, h2, h3 {
 
 .info_more{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(0, 1fr);
 }
 #more_wiki{
     grid-row: 1 / 2;
@@ -144,8 +144,8 @@ h1, h2, h3 {
 @media (max-width:800px) {
     .info_more{
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
     }
     #more_wiki{
         grid-row: 1 / 2;
