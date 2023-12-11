@@ -86,32 +86,6 @@ body{
     display: block;
 }
 
-.termin {
-    font-size: 20px;
-    color: blue;
-    font-family: 'Georgia', 'Times New Roman', Times, serif;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.termin_desc {
-    font-size: 16px;
-    text-align: justify;
-    color: green;
-    display: flex;
-    flex-wrap: wrap;
-}
-.orange {
-    color: orange;
-    display: flex;
-}
-.termin_alt {
-    color: red;
-}
-.purple {
-    color: purple;
-}
-
 h1, h2, h3 {
     font-family: 'Comic Neue', cursive;
 }
@@ -442,11 +416,10 @@ input:checked ~ * .header__menu {
 
 
 
-.dropdown {
+/* .dropdown {
     position: flex;
     display: inline-block;
     width: 100px;
-    /* background-color: red; */
 }
 .image__button{
     z-index: 2;
@@ -476,10 +449,8 @@ input:checked ~ * .header__menu {
     display: block;
 }
   
-  /* Изменяем цвет ссылки при наведении */
 .dropdown-content a:hover {background-color: #ddd}
   
-  /* Показываем выпадающий блок при наведении */
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -488,73 +459,11 @@ input:checked ~ * .header__menu {
         visibility: hidden;
         z-index: -100;
     }
-}
-
-.cards{
-    display: flex;
-    flex-wrap: wrap;
-    height: 100%;
-    flex-direction: row;
-}
-
-.card__old_computer{
-    background-image: url('./images/first_computer.jpg');
-    background-size: cover;
-    background-position: center;
-    width: 300px;
-    height: 190px;
-}
-.card__old_computer::before{
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
-    color:#ff0000;
-    background: #ddd;
-    opacity: 0;
-}
-.card__old_computer:hover::before{
-    transition: opacity 1s;
-    opacity: 1;
-}
-.card__system_block{
-    background-image: url('./images/system_block.jpg');
-    background-size: cover;
-    background-position: center;
-    width: 180px;
-    height: 280px;
-}
-.card__system_block::before{
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.";
-    color:#ff0000;
-    background: #00000d;
-    opacity: 0;
-}
-.card__system_block:hover::before{
-    transition: opacity 1s;
-    opacity: 1;
-}
-
-.card__monitor{
-    background-image: url('./images/monitor.jpeg');
-    background-size: cover;
-    background-position: center;
-    width: 430px;
-    height: 350px;
-    opacity: 1;
-}
-.card__monitor::before{
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-    color:#ff0000;
-    opacity: 0;
-    background: black;
-
-}
-.card__monitor:hover::before{
-    transition: opacity 1s;
-    opacity: 1;
-}
+} */
 
 
 
-#basket{
+/* #basket{
     content: "";
     width: 40px;
     height: 40px;
@@ -585,7 +494,7 @@ input:checked ~ * .header__menu {
     top: 5px;
     width: 40px;
     height: 40px;
-}
+} */
 
 .notification{
     position: absolute;
@@ -624,4 +533,57 @@ input:checked ~ * .header__menu {
     align-items: center;
     justify-content: center;
     color: white;
+}
+#sec2{
+    display: block;
+    position: relative;
+    background: linear-gradient(45deg, blue, red);
+    padding: 10px;
+    margin: 10px 0 0 0;
+    width: 100%;
+    z-index: 20;
+}
+
+
+#sec2::after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: linear-gradient(90deg, #22ff00, #00ffbb);
+}
+
+#sec2:hover{
+    scale: 1.03;
+    z-index: 100;
+    transition: 3s;
+    &&::after{
+        opacity: 1;
+        animation: rotate_back 1s infinite;
+    }
+
+}
+#sec2:hover{
+    scale: 1.03;
+    z-index: 100;
+    transition: 3s;
+}
+@keyframes rotate_back{
+    25%{
+        transform: translateX(5px);
+    }
+    50%{
+        transform: translateY(5px);
+    }
+    75%{
+        transform: translateX(-5px);
+    }
+    100%{
+        transform: translateY(-5px);
+    }
 }
