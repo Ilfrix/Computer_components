@@ -528,18 +528,18 @@ input:checked ~ * .header__menu {
     justify-content: center;
     color: white;
 }
+
 #sec2{
     display: block;
     position: relative;
     background: linear-gradient(45deg, blue, red);
-    /* padding: 10px; */
     margin: 10px 0 0 0;
     width: 100%;
     z-index: 1;
 }
 
 
-#sec2::after{
+/* #sec2::after{
     position: absolute;
     content: "";
     width: 100%;
@@ -547,26 +547,22 @@ input:checked ~ * .header__menu {
     left: 0;
     top: 0;
     opacity: 0;
-    z-index: -1;
     overflow: hidden;
     background: linear-gradient(90deg, #22ff00, #00ffbb);
-}
+    z-index: -1;
+} */
 
 #sec2:hover{
     scale: 1.03;
     z-index: 100;
     transition: 3s;
-    &&::after{
+    /* &&::after{
         opacity: 1;
         animation: rotate_back 1s infinite;
-    }
+    } */
 
 }
-#sec2:hover{
-    scale: 1.01;
-    z-index: 100;
-    transition: 3s;
-}
+
 @keyframes rotate_back{
     25%{
         transform: translateX(5px);
