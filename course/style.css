@@ -583,7 +583,7 @@ input:checked ~ * .header__menu {
         padding: 0 5%;
     }
     #sec2:hover{
-        scale: 1.01;
+        scale: 1.03;
         z-index: 100;
         transition: 3s;
     }
