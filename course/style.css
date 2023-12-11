@@ -394,7 +394,6 @@ input:checked ~ * .header__menu {
     outline: 0;
     line-height: 40px;
     text-align: center;
-    /* letter-spacing: 1px; */
     display: flex;
     flex-wrap: wrap;
     text-decoration: none;
@@ -532,35 +531,18 @@ input:checked ~ * .header__menu {
 #sec2{
     display: block;
     position: relative;
-    background: linear-gradient(45deg, blue, red);
+    color: white;
+    padding: 10px;
+    background: linear-gradient(45deg, rgb(60, 60, 255), rgb(248, 64, 64));
     margin: 10px 0 0 0;
     width: 100%;
     z-index: 1;
 }
 
-
-/* #sec2::after{
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    overflow: hidden;
-    background: linear-gradient(90deg, #22ff00, #00ffbb);
-    z-index: -1;
-} */
-
 #sec2:hover{
     scale: 1.03;
     z-index: 100;
     transition: 3s;
-    /* &&::after{
-        opacity: 1;
-        animation: rotate_back 1s infinite;
-    } */
-
 }
 
 @keyframes rotate_back{
