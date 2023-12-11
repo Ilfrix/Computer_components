@@ -588,3 +588,24 @@ input:checked ~ * .header__menu {
         transition: 3s;
     }
 }
+
+/* videocard */
+
+#card_sec{
+    position: relative;
+    display: flex;
+}
+#card_vid1, #card_vid2, #card_vid3, #card_vid4, #card_vid5{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+#text1, #text2, #text3, #text4, #text5{
+    display: none;
+}
