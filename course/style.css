@@ -602,6 +602,7 @@ input:checked ~ * .header__menu {
     transform: translateX(-50%);
     text-align: center;
 }
+    
 .footer_about{
     position: fixed;
     width: 100%;
@@ -627,5 +628,12 @@ input:checked ~ * .header__menu {
     #card_sec{
         position:relative;
         display: block;
+    }
+    #info_author{
+        position: absolute;
+        top: 65%;
+        padding: 20px 0 20px 0;
+        font-size: 20px;
+        text-align: center;
     }
 }
