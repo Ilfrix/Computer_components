@@ -86,6 +86,33 @@ body{
     display: block;
 }
 
+.termin {
+    font-size: 20px;
+    color: blue;
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.termin_desc {
+    font-size: 16px;
+    text-align: justify;
+    color: green;
+    display: flex;
+    flex-wrap: wrap;
+}
+.orange {
+    color: orange;
+    display: flex;
+}
+.termin_alt {
+    color: red;
+}
+.purple {
+    color: purple;
+}
+
+
 h1, h2, h3 {
     font-family: 'Comic Neue', cursive;
 }
@@ -416,11 +443,12 @@ input:checked ~ * .header__menu {
 
 
 
-/* .dropdown {
+.dropdown {
     position: flex;
     display: inline-block;
     width: 100px;
 }
+
 .image__button{
     z-index: 2;
     position: relative;
@@ -459,42 +487,8 @@ input:checked ~ * .header__menu {
         visibility: hidden;
         z-index: -100;
     }
-} */
+} 
 
-
-
-/* #basket{
-    content: "";
-    width: 40px;
-    height: 40px;
-    top: 0;
-    position: relative;
-    background-size: cover;
-    background-image: url('./images/basket.png');
-}
-
-#basket_add{
-    position: relative;
-    top: 5px;
-    width: 40px;
-    height: 40px;
-}
-
-#basket_up{
-    transform: rotate(90deg);
-    position: relative;
-    width: 40px;
-    height: 40px;
-    top: 5px;
-}
-
-#basket_down{
-    transform: rotate(-90deg);
-    position: relative;
-    top: 5px;
-    width: 40px;
-    height: 40px;
-} */
 
 .notification{
     position: absolute;
@@ -538,10 +532,10 @@ input:checked ~ * .header__menu {
     display: block;
     position: relative;
     background: linear-gradient(45deg, blue, red);
-    padding: 10px;
+    /* padding: 10px; */
     margin: 10px 0 0 0;
     width: 100%;
-    z-index: 20;
+    z-index: 1;
 }
 
 
@@ -569,7 +563,7 @@ input:checked ~ * .header__menu {
 
 }
 #sec2:hover{
-    scale: 1.03;
+    scale: 1.01;
     z-index: 100;
     transition: 3s;
 }
@@ -585,5 +579,16 @@ input:checked ~ * .header__menu {
     }
     100%{
         transform: translateY(-5px);
+    }
+}
+
+@media (max-width:767px) {
+    main{
+        padding: 0 5%;
+    }
+    #sec2:hover{
+        scale: 1.01;
+        z-index: 100;
+        transition: 3s;
     }
 }
