@@ -520,7 +520,7 @@ input:checked ~ * .header__menu {
     display: block;
 }
 @media (max-width:767px) {
-    .dropdown, .buttons, .image__button, .dropdown-content{
+    .dropdown, .buttons, .image__button, .dropdown-content, .monitor__menu{
         visibility: hidden;
         z-index: -100;
     }
