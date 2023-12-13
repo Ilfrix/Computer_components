@@ -113,9 +113,9 @@ body{
 }
 
 
-h1, h2, h3 {
+/* h1, h2, h3 {
     font-family: 'Comic Neue', cursive;
-}
+} */
 #float_right{
     float: right;
     margin-right: 1rem;
